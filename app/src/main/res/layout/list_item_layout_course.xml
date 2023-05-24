@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E0F1FF"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/textViewCourseName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="32dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCourseLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="com.example.androidfinalproject.Objects.Course Name" />
+
+    <TextView
+        android:id="@+id/textViewTotalPar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingRight="32dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewYardage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewYardage"
+        tools:text="Par 72" />
+
+    <TextView
+        android:id="@+id/textViewCourseLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="32dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewYardage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCourseName"
+        tools:text="com.example.androidfinalproject.Objects.Course Location" />
+
+    <TextView
+        android:id="@+id/textViewYardage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="32dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCourseLocation"
+        tools:text="7,200 Yards" />
+
+    <TextView
+        android:id="@+id/Line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewYardage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

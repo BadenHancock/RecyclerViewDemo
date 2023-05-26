@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.findNavController
 import com.example.recyclerviewdemo.databinding.FragmentCourseSelectorBinding
 
@@ -36,7 +37,7 @@ class CourseSelectorFragment : Fragment() {
         )
 
 
-        val courses = listOf(
+        val courses = mutableListOf(
             Course("Country Club of Scranton (Falls)", ccsFalls, 9, 36),
             Course("Country Club of Scranton (Pines)", ccsPines, 9, 35),
             Course("Wyoming Valley Country Club", WyomingValley, 18, 71)
@@ -45,6 +46,11 @@ class CourseSelectorFragment : Fragment() {
         binding.button2.setOnClickListener() {
             val action = CourseSelectorFragmentDirections.actionCourseSelectorFragmentToCourseCreatorFragment()
             rootView.findNavController().navigate(action)
+        }
+
+        setFragmentResultListener("requestKey") {requestKey, bundle ->
+            val result : Course = bundle.getBundle("bundleKey")
+            courses.add(result)
         }
 
         val myAdapter = CourseAdapter(courses)
